@@ -56,6 +56,10 @@ option `--proxy`, `--pwndb` and `--non-headless` have been added
 With option `--proxy` [Proxybroker](https://github.com/constverum/ProxyBroker) wiil be run local proxy server on 8888
  port and will be create pull  from min 5  HTTPS proxy. Your don't need to search public proxies , all will be done 
  automatically. Note that proxies are public and often in the headers send your real IP to the server.
+ 
+ ### Proxy SSLVerifyError
+ If you get this error, then it was MITM attack attempt using self-signed certificate, which happens all the time on      public proxies. To fix it in Linux open the file `/home/[your_username]/.local/lib/python3.6/site-packages/proxybroker/judge.py` and in line 117 change `verify_ssl=False` to `verify_ssl=True`
+
 
 ## PwnDB
 It's TOR service which contains
